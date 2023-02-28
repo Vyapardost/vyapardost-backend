@@ -1,0 +1,48 @@
+{
+  "name": "vyapardost-backend",
+  "version": "1.0.0",
+  "description": "Vyapardost backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "start:dev": "node server.js",
+    "start:local": "nodemon --verbose server.js",
+    "test": "npm run test",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "format": "npm run prettier:fix && npm run lint:fix",
+    "husky-setup": "npx husky install && npx husky add .husky/pre-commit \"npx --no-install lint-staged\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vyapardost/vyapardost-backend.git"
+  },
+  "author": "Devesh Verma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vyapardost/vyapardost-backend/issues"
+  },
+  "homepage": "https://github.com/Vyapardost/vyapardost-backend#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.35.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.2",
+    "prettier": "2.8.4"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run format"
+    ]
+  }
+}
